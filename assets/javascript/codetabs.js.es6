@@ -1,4 +1,9 @@
-(function() {
-Discourse.Markdown.whiteListTag("ul", "class", "ab-tab");
-Discourse.Markdown.whiteListTag("ul", "class", "ab-switcher");
-})();
+import { registerOption } from 'pretty-text/pretty-text';
+
+registerOption((siteSettings, opts) => {
+  opts.features["..."] = true;
+});
+
+export function setup(helper) {
+  helper.whiteList(['ul[class]']);
+}
