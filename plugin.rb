@@ -1,7 +1,9 @@
-# name: discourse-html-whitelist
-# about: Basic template to allow different html elements and attributes when creating a class.
-# version: 0.0.1
-# authors: Paul Newell
-# url: https://github.com/pnewell/discourse-html-whitelist/
+import { registerOption } from 'pretty-text/pretty-text';
 
-register_asset "javascript/codetabs.js.es6", :server_side
+registerOption((siteSettings, opts) => {
+  opts.features["..."] = true;
+});
+
+export function setup(helper) {
+  helper.whiteList(['ul[class]']);
+}
