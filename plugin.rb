@@ -1,9 +1,1 @@
-import { registerOption } from 'pretty-text/pretty-text';
-
-registerOption((siteSettings, opts) => {
-  opts.features["..."] = true;
-});
-
-export function setup(helper) {
-  helper.whiteList(['ul[class]']);
-}
+register_asset "javascript/codetabs.js.es6", :server_side
